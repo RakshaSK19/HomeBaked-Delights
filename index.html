@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HomeBaked Delights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="login-page">
+    <div class="login-card">
+        <h1 class="login-heading">HomeBaked Delights</h1>
+        <h3> LOGIN</h3>
+        <div class="login-inputs">
+            <input type="email" id="loginEmail" placeholder="Email">
+            <input type="password" id="loginPassword" placeholder="Password">
+        </div>
+        <button onclick="login()">Login</button>
+        <p id="loginError"></p>
+    </div>
+</div>
+
+
+<!-- NAVBAR -->
+<div class="navbar" style="display:none;">
+    <h2 class="logo">HomeBaked Delights</h2>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+        <a href="#feedback">Feedback</a>
+        <a href="javascript:void(0)" class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cartCount">0</span>
+    <a href="javascript:void(0)" id="logoutLink" onclick="logout()" style="display:none;">Logout</a>
+</a>
+    </div>
+</div>
+
+<!-- HOME -->
+<section id="home" class="section hero">
+    <img src="https://png.pngtree.com/png-clipart/20250219/original/pngtree-pastel-pink-cupcake-stand-for-bakery-promotion-clipart-illustration-png-image_20475172.png" class="hero-img">
+    <h1>Freshly Baked Every Day</h1>
+    <p>Cakes • Bread • Pastries • Cookies<br>Warm, soft & made with love ♥</p>
+    <a href="#products" class="btn">View Our Menu</a>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="section">
+    <h1 class="menu-title">Our Menu</h1>
+    <div class="product-container">
+
+        <!-- DONUTS -->
+        <div class="product-card">
+            <img src="https://media.wired.com/photos/6074aa620dfeac35a0cca839/master/w_2560%2Cc_limit/Science_donuts_465529983.jpg">
+            <h3>Donuts</h3>
+            <select onchange="changePrice(this,'donutPrice')">
+                <option value="90">Sugar Glazed</option>
+                <option value="110">Chocolate</option>
+                <option value="120">Strawberry</option>
+            </select>
+            <p>₹<span id="donutPrice">90</span></p>
+            <button onclick="addToCart('Donuts', this)">Add to Cart</button>
+        </div>
+
+        <!-- COOKIES -->
+        <div class="product-card">
+            <img src="https://wallpapers.com/images/featured/cookies-pictures-t0turol93mzzx4v8.jpg">
+            <h3>Cookies</h3>
+            <select onchange="changePrice(this,'cookiePrice')">
+                <option value="100">Chocolate Chip</option>
+                <option value="110">Peanut Butter</option>
+                <option value="120">Double Chocolate</option>
+            </select>
+            <p>₹<span id="cookiePrice">100</span></p>
+            <button onclick="addToCart('Cookies', this)">Add to Cart</button>
+        </div>
+
+        <!-- MUFFINS -->
+         <div class="product-card">
+            <img src="https://natashaskitchen.com/wp-content/uploads/2019/02/Breakfast-Muffins-5.jpg">
+            <h3>Muffins</h3>
+            <select onchange="changePrice(this, 'muffinPrice')">
+                <option value="90">Blueberry</option>
+                <option value="100">Chocolate Chip</option>
+                <option value="110">Banana Walnut</option>
+            </select>
+            <p>₹<span id="muffinPrice">90</span></p>
+            <button onclick="addToCart('Muffins', this)">Add to Cart</button>
+        </div>
+
+        <!-- CUPCAKES -->
+        <div class="product-card">
+            <img src="https://thumbs.dreamstime.com/b/different-colored-sweet-cupcakes-pastry-table-ai-generative-different-colored-sweet-cupcakes-pastry-table-macro-ai-293908781.jpg">
+            <h3>Cupcakes</h3>
+            <select onchange="changePrice(this,'cupcakePrice')">
+                <option value="100">Vanilla</option>
+                <option value="110">Strawberry</option>
+                <option value="120">Chocolate</option>
+                <option value="130">Red Velvet</option>
+            </select>
+            <p>₹<span id="cupcakePrice">100</span></p>
+            <button onclick="addToCart('Cupcakes', this)">Add to Cart</button>
+        </div>
+
+        <!-- MACAROONS -->
+        <div class="product-card">
+            <img src="https://www.recipetocook.co.uk/wp-content/uploads/2024/05/macaroons-recipe-1.jpg">
+            <h3>Macaroons</h3>
+            <select onchange="changePrice(this,'macPrice')">
+                <option value="200">Vanilla</option>
+                <option value="220">Chocolate</option>
+                <option value="230">Blackcurrant</option>
+            </select>
+            <p>₹<span id="macPrice">200</span></p>
+            <button onclick="addToCart('Macaroons', this)">Add to Cart</button>
+        </div>
+
+        <!-- CROISSANTS -->
+        <div class="product-card">
+          <img src="https://tse2.mm.bing.net/th/id/OIP._0TSRlMhTf6WyVFiRh_O7wHaE7?rs=1&pid=ImgDetMain&o=7&rm=3">
+          <h3>Croissants</h3>
+          <select onchange="changePrice(this, 'croissantPrice')">
+             <option value="120">Butter</option>
+             <option value="140">Chocolate</option>
+             <option value="150">Almond</option>
+         </select>
+         <p>₹<span id="croissantPrice">120</span></p>
+         <button onclick="addToCart('Croissants', this)">Add to Cart</button>
+        </div>
+
+        <!-- FRUIT TARTS -->
+         <div class="product-card">
+            <img src="https://allnutritious.com/wp-content/uploads/2022/11/12.-Mini-Fruit-Tarts-800x1200.jpg">
+            <h3>Fruit Tarts</h3>
+            <select onchange="changePrice(this, 'tartPrice')">
+                <option value="150">Mixed Fruit</option>
+                <option value="160">Strawberry</option>
+                <option value="170">Blueberry</option>
+            </select>
+            <p>₹<span id="tartPrice">150</span></p>
+            <button onclick="addToCart('Fruit Tarts', this)">Add to Cart</button>
+        </div>
+
+        <!-- BROWNIE -->
+        <div class="product-card">
+            <img src="https://i.pinimg.com/originals/73/7d/40/737d40cf654dc1b3d2a2dc2396b2ccb0.jpg">
+            <h3>Brownies</h3>
+            <select onchange="changePrice(this, 'browniePrice')">
+              <option value="150">Classic</option>
+              <option value="170">Walnut</option>
+         </select>
+         <p>₹<span id="browniePrice">150</span></p>
+         <button onclick="addToCart('Brownies', this)">Add to Cart</button>
+        </div>
+
+        <!-- CHEESECAKES -->
+         <div class="product-card">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.gndFKOxOMZNbPTFS_4Xu-gHaLH?cb=ucfimg2&pid=ImgDet&ucfimg=1&w=192&h=288&c=7&o=7&rm=3">
+            <h3>Cheesecakes</h3>
+            <select onchange="changePrice(this, 'cheesePrice')">
+                <option value="220">Classic</option>
+                <option value="240">Blueberry</option>
+                <option value="260">Chocolate</option>
+                <option value="270">Oreo</option>
+            </select>
+            <p>₹<span id="cheesePrice">220</span></p>
+            <button onclick="addToCart('Cheesecake', this)">Add to Cart</button>
+        </div>
+
+        <!-- TIRAMISU -->
+        <div class="product-card">
+            <img src="https://sallysbakingaddiction.com/wp-content/uploads/2019/06/homemade-tiramisu-2.jpg">
+            <h3>Tiramisu</h3>
+            <select onchange="changePrice(this, 'tiramisuPrice')">
+              <option value="250">Classic</option>
+              <option value="270">Chocolate</option>
+          </select>
+          <p>₹<span id="tiramisuPrice">250</span></p>
+          <button onclick="addToCart('Tiramisu', this)">Add to Cart</button>
+          </div>
+
+        <!-- CUSTOMIZED CAKES -->
+        <div class="product-card special-card">
+           <img src="data:image/webp;base64,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">
+           <h3>Customized Cakes</h3>
+           <label>Choose Occasion:</label><br>
+           <select id="cakeOccasion">
+             <option>For Birthday</option>
+             <option>For Anniversary</option>
+             <option>For Wedding</option>
+           </select>
+           <p class="price">Starts from ₹500</p>
+           <button onclick="customCakeEnquiry()">Enquire Now</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section card">
+    <h2>Contact Us</h2>
+    <p>📞 +91 7204132350</p>
+    <p>📧 homebakeddelights@gmail.com</p>
+    <p>📍 Bengaluru, India</p>
+</section>
+
+<!-- FEEDBACK -->
+<section id="feedback">
+    <h2>Feedback</h2>
+
+    <input type="text" id="name" placeholder="Your Name"><br><br>
+
+    <input type="text" id="phone" placeholder="Phone Number"><br><br>
+
+    <input type="email" id="email" placeholder="Email ID"><br><br>
+
+    <textarea id="feedbackText" rows="5" placeholder="Write your feedback here..."></textarea>
+    <br><br>
+
+    <button onclick="saveFeedback()">Submit Feedback</button>
+</section>
+
+
+<!-- CART POPUP -->
+<div id="cartBox" class="cart-box">
+    <h3>Your Cart 🛒</h3>
+    <ul id="cartItems"></ul>
+
+<!--
+    <div class="coupon-box">
+    <input type="text" id="couponInput" placeholder="Enter coupon code">
+    <button onclick="applyCoupon()">Apply</button>
+</div>
+--->
+
+    <p><strong>Total: ₹<span id="totalPrice">0</span></strong></p>
+    <button onclick="clearCart()">Clear Cart</button>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
