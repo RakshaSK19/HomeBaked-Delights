@@ -35,3 +35,14 @@ HomeBaked Delights is a web-based bakery storefront that allows users to explore
 
 ## Author
 Raksha S Kalagare
+
+## Website Preview
+### Login
+![Login](screenshots/loginpage.png)
+### Homepage
+![Homepage](screenshots/homepage.png)
+### Products
+![Products](screenshots/products1.png)
+![Products](screenshots/products2.png)
+### Shopping Cart
+![Shopping Cart](screenshots/cart.png)
