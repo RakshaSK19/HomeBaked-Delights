@@ -251,3 +251,130 @@ textarea {
     border-radius: 6px;
     cursor: pointer;
 }
+
+
+/* ==============================
+   MOBILE RESPONSIVE DESIGN
+============================== */
+
+@media screen and (max-width: 600px) {
+
+    /* NAVIGATION BAR */
+    .navbar {
+        padding: 14px 12px;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 22px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 16px;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    /* SECTIONS */
+    .section {
+        padding: 35px 16px;
+    }
+
+    /* HERO SECTION */
+    .hero-img {
+        width: 110px;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    /* PRODUCT GRID */
+    .product-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .product-card {
+        padding: 12px 8px;
+        min-width: 0;
+    }
+
+    .product-card img {
+        width: 100%;
+        max-width: 130px;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    /* SPECIAL CUSTOMIZED CAKES */
+    .special-card {
+        width: 100%;
+        max-width: 420px;
+        box-sizing: border-box;
+    }
+
+    /* CONTACT AND OTHER CARDS */
+    .card {
+        margin: 20px 12px;
+        padding: 20px 14px;
+        box-sizing: border-box;
+    }
+
+    /* LOGIN PAGE */
+    .login-card {
+        width: calc(100% - 32px);
+        min-width: 0;
+        padding: 28px 20px;
+        box-sizing: border-box;
+    }
+
+    .login-heading {
+        font-size: 25px;
+    }
+
+    .login-inputs input {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* SHOPPING CART */
+    .cart-box {
+        left: 12px;
+        right: 12px;
+        top: 70px;
+        width: auto;
+        max-height: 70vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    .cart-box li {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    /* FEEDBACK FORM */
+    #feedback input,
+    #feedback textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* BUTTONS */
+    button {
+        max-width: 100%;
+    }
+}
