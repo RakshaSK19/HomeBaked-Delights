@@ -9,8 +9,7 @@ HomeBaked Delights is a web-based bakery storefront that allows users to explore
 - Interactive shopping cart
 - Quantity management
 - Dynamic price calculation
-- Coupon functionality
-- Login interface
+- Demo login interface
 
 ## Technologies Used
 - HTML5
